@@ -22,7 +22,7 @@ public class Main {
         System.out.println("\nRELATÓRIO DE IMPOSTO DE RENDA\n");
 
         System.out.println("CONSOLIDADO DE RENDA:");
-
+        leitura.close();
         double impostoSalario = 0;
         double salario = salarioAnual/12;
         if(salario >= 5000)
@@ -58,6 +58,8 @@ public class Main {
         double abatimento = (gastosDedutivel >= maximoDedutivel ? gastosDedutivel : gastosDedutivel);
         System.out.printf("\nAbatimento: %.2f", abatimento);
         System.out.printf("\nImposto devido: %.2f", (impostoTotal - abatimento));
+
+
 
     }
 }

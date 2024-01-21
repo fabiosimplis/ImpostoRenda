@@ -43,7 +43,7 @@ public class Main {
 
         System.out.printf("Imposto sobre o salário: %.2f", impostoSalario);
         System.out.printf("\nImposto sobre serviço: %.2f", impostoServico);
-        System.out.printf("\n Imposto sobre ganho de capital: %.2f", impostoCapital);
+        System.out.printf("\nImposto sobre ganho de capital: %.2f", impostoCapital);
 
         System.out.println("\nDEDUÇÕES:");
         double maximoDedutivel = (impostoCapital + impostoServico + impostoSalario) * 0.3;
@@ -55,8 +55,9 @@ public class Main {
         System.out.println("\nRESUME:");
         double impostoTotal = impostoSalario + impostoServico + impostoCapital;
         System.out.printf("\nImposto bruto total: %.2f", impostoTotal);
-        System.out.printf("\nAbatimento: %.2f", maximoDedutivel);
-        System.out.printf("\nImposto devido: %.2f", (impostoTotal - maximoDedutivel));
+        double abatimento = (gastosDedutivel >= maximoDedutivel ? gastosDedutivel : gastosDedutivel);
+        System.out.printf("\nAbatimento: %.2f", abatimento);
+        System.out.printf("\nImposto devido: %.2f", (impostoTotal - abatimento));
 
     }
 }
